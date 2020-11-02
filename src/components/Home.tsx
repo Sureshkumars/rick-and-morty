@@ -5,7 +5,6 @@ import { SearchResultsContainer } from "./SearchResultsContainer";
 export const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showAll, setShowAll] = useState(false);
-  const [defaultPage, setDefaultPage] = useState(1);
   return (
     <VStack spacing={8} marginTop="10">
       <Image
@@ -19,17 +18,14 @@ export const Home = () => {
         onChange={(value) => {
           setSearchTerm(value);
           setShowAll(true);
-          setDefaultPage(1);
         }}
       />
       <SearchResultsContainer
         searchTerm={searchTerm}
         showAll={showAll}
-        page={defaultPage}
         onResetSearch={() => {
           setSearchTerm("");
           setShowAll(true);
-          setDefaultPage(1);
         }}
       />
     </VStack>

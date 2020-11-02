@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Flex, VStack, Box, Grid, Text, Button } from "@chakra-ui/core";
 import { CharacterCard } from "./CharacterCard";
 import useCharactersFetchService from "../hooks/useCharactersFetchService";
@@ -10,17 +10,20 @@ import { PageError } from "./PageError";
 interface IProps {
   searchTerm: string;
   showAll: boolean;
-  page: number;
   onResetSearch: () => void;
 }
 export const SearchResultsContainer: React.FC<IProps> = (props: IProps) => {
-  const [page, setpageNumber] = useState(props.page);
+  const [page, setpageNumber] = useState(1);
   //Custom character fetch service hook with debounce limit of 500ms
   const searchResults = useCharactersFetchService(
     useDebounce(props.searchTerm),
     Math.ceil(page / 4),
     props.showAll
   );
+  //Reset Page Number when search term changes
+  useEffect(() => {
+    setpageNumber(1);
+  }, [props.searchTerm]);
 
   return (
     <Box>
