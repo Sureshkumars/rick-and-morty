@@ -22,7 +22,7 @@ const useCharactersFetchService = (
     }
 
     //Toggles between searching for all characters or filter based on input search term
-    let url =
+    const url =
       searchTerm === ""
         ? `${characterApiEndPoint}/?page=${page}`
         : `${characterApiEndPoint}/?name=${searchTerm}&page=${page}`;

@@ -10,7 +10,7 @@ const useCharacterDetailService = (characterId: string) => {
     status: "loading",
   });
   useEffect(() => {
-    let url = `${characterApiEndPoint}/${characterId}`;
+    const url = `${characterApiEndPoint}/${characterId}`;
     //API function to get the character details
     const fetchCharacterDetailsApi = async () => {
       try {
@@ -27,7 +27,7 @@ const useCharacterDetailService = (characterId: string) => {
           });
         } else {
           //Reduce the episode array to single endpioint url with multiple episodes id in slug to get all the episdode details
-          let epiSodeUrl: string = characterResponse.episode.reduce(
+          const epiSodeUrl: string = characterResponse.episode.reduce(
             (acc: string, url: string) => {
               return `${acc},${url.split(/[\s/]+/).pop()}`;
             }
@@ -47,7 +47,7 @@ const useCharacterDetailService = (characterId: string) => {
             });
           } else {
             //Handling for Single Episode response as it is returned as object
-            let episodeDetails =
+            const episodeDetails =
               characterResponse.episode.length === 1
                 ? [
                     {
