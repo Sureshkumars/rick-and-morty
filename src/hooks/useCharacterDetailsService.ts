@@ -12,7 +12,7 @@ const useCharacterDetailService = (characterId: string) => {
   useEffect(() => {
     let url = `${characterApiEndPoint}/${characterId}`;
     //API function to get the character details
-    const fetchCharactersApi = async () => {
+    const fetchCharacterDetailsApi = async () => {
       try {
         // Fetch data from REST API
         const characterResponse = await (await fetch(url)).json();
@@ -90,8 +90,8 @@ const useCharacterDetailService = (characterId: string) => {
     };
 
     // Call async function
-    fetchCharactersApi();
-  });
+    fetchCharacterDetailsApi();
+  }, []);
   return result;
 };
 

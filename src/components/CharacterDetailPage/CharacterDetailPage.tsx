@@ -14,19 +14,22 @@ import {
   ListIcon,
   ListItem,
 } from "@chakra-ui/core";
-import { PageError } from "./PageError";
-import { SkeletonLoader } from "./SkeletonLoader";
-import useCharacterDetailService from "../hooks/useCharacterDetailsService";
+import { ErrorMessage } from "../ErrorMessage/ErrorMessage";
+import { SkeletonLoader } from "../SkeletonLoader/SkeletonLoader";
 import { FaCheckCircle } from "react-icons/fa";
 import { useParams } from "react-router-dom";
+import { ERROR_MESSAGE } from "../../constants/constants";
+import useCharacterDetailService from "../../hooks/useCharacterDetailsService";
+
 interface IParams {
   characterId: string;
 }
 export const CharacterDetailPage: React.FC = () => {
   const { characterId }: IParams = useParams();
   const toast = useToast();
-  //get character details
+  //Custom Hook to get character details
   const characterDetails = useCharacterDetailService(characterId);
+
   return (
     <Box>
       {characterDetails.status === "loading" && <SkeletonLoader />}
@@ -37,7 +40,7 @@ export const CharacterDetailPage: React.FC = () => {
             src={characterDetails.payload.imageUrl}
             alt={characterDetails.payload.name}
             boxSize="200px"
-            fallbackSrc="/character-fallback.jpeg"
+            fallbackSrc="/images/character-fallback.jpeg"
           />
           <Box>
             <Heading mb={4}>{characterDetails.payload.name}</Heading>
@@ -51,6 +54,12 @@ export const CharacterDetailPage: React.FC = () => {
               <Stat>
                 <StatLabel>Gender</StatLabel>
                 <StatNumber>{characterDetails.payload.gender}</StatNumber>
+              </Stat>
+            </Box>
+            <Box marginTop="1.25rem" padding="1rem" borderWidth="2px">
+              <Stat>
+                <StatLabel>Status</StatLabel>
+                <StatNumber>{characterDetails.payload.status}</StatNumber>
               </Stat>
             </Box>
             <Box marginTop="1.25rem" padding="1rem" borderWidth="2px">
@@ -78,9 +87,9 @@ export const CharacterDetailPage: React.FC = () => {
                 <Stat>
                   <StatLabel>Episode Details</StatLabel>
                 </Stat>
-                {characterDetails.payload.episode.map((data) => {
+                {characterDetails.payload.episode.map((data, i) => {
                   return (
-                    <ListItem key={data.name}>
+                    <ListItem key={i}>
                       <ListIcon
                         as={FaCheckCircle}
                         color="green.500"
@@ -94,6 +103,7 @@ export const CharacterDetailPage: React.FC = () => {
               </List>
             </Box>
             <Button
+              aria-label="buy-merchandise"
               size="lg"
               colorScheme="blue"
               mt="24px"
@@ -103,7 +113,7 @@ export const CharacterDetailPage: React.FC = () => {
                   title: "Purchase Successfull.",
                   description: "Merchandise was clicked successfully",
                   status: "success",
-                  duration: 2000,
+                  duration: 4000,
                   isClosable: true,
                 })
               }
@@ -113,7 +123,9 @@ export const CharacterDetailPage: React.FC = () => {
           </Box>
         </VStack>
       )}
-      {characterDetails.status === "error" && <PageError />}
+      {characterDetails.status === "error" && (
+        <ErrorMessage message={ERROR_MESSAGE} showHomeCTA={true} />
+      )}
     </Box>
   );
 };

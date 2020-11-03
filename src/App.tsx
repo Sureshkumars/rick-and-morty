@@ -1,10 +1,11 @@
 import React from "react";
 import { Box, Grid } from "@chakra-ui/core";
-import { Home } from "./components/Home";
-import { Header } from "./components/Header";
-import { PageNotFound } from "./components/PageNotFound";
-import { CharacterDetailPage } from "./components/CharacterDetailPage";
+import { Home } from "./components/Home/Home";
+import { Header } from "./components/Header/Header";
+import { ErrorMessage } from "./components/ErrorMessage/ErrorMessage";
+import { CharacterDetailPage } from "./components/CharacterDetailPage/CharacterDetailPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { PAGE_NOT_FOUND } from "./constants/constants";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
               <CharacterDetailPage />
             </Route>
             <Route exact path="*">
-              <PageNotFound />
+              <ErrorMessage message={PAGE_NOT_FOUND} showHomeCTA={true} />{" "}
             </Route>
           </Switch>
         </Grid>

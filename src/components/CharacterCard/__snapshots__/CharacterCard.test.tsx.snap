@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check for Character Card snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="css-ao3w3m"
+  >
+    <img
+      alt="Rick"
+      class="chakra-image__placeholder css-0"
+      src="/images/character-fallback.jpeg"
+    />
+    <div
+      class="css-n16x53"
+    >
+      <div
+        class="css-x1sij0"
+      >
+        <span
+          class="chakra-badge css-637omx"
+        >
+          Human
+        </span>
+      </div>
+      <h4
+        class="css-mvaft7"
+      >
+        <strong>
+          Rick 
+        </strong>
+      </h4>
+      <p
+        class="css-0"
+      >
+        <strong>
+          Last location - 
+        </strong>
+         Earth
+      </p>
+      <div
+        class="css-15yujhg"
+      >
+        <span
+          class="css-bgvdb6"
+        >
+          Totally 20 episodes
+        </span>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

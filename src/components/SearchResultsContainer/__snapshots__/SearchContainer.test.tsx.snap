@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResultsContainer matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="css-0"
+  >
+    <div
+      class="chakra-stack css-pk93zj"
+    >
+      <div
+        class="css-lgj0h8"
+      >
+        <p
+          class="chakra-text css-1ezsviu"
+        >
+          Found 2 characters,
+        </p>
+        <button
+          class="chakra-button css-oqfhsh"
+          type="button"
+        >
+          Reset Search
+        </button>
+      </div>
+      <div
+        class="css-1xg6dlq"
+      >
+        <a
+          href="/character/1"
+          title="Rick"
+        >
+          <div
+            class="css-ao3w3m"
+          >
+            <img
+              alt="Rick"
+              class="chakra-image__placeholder css-0"
+              src="/images/character-fallback.jpeg"
+            />
+            <div
+              class="css-n16x53"
+            >
+              <div
+                class="css-x1sij0"
+              >
+                <span
+                  class="chakra-badge css-637omx"
+                >
+                  Alien
+                </span>
+              </div>
+              <h4
+                class="css-mvaft7"
+              >
+                <strong>
+                  Rick 
+                </strong>
+              </h4>
+              <p
+                class="css-0"
+              >
+                <strong>
+                  Last location - 
+                </strong>
+                 Earth
+              </p>
+              <div
+                class="css-15yujhg"
+              >
+                <span
+                  class="css-bgvdb6"
+                >
+                  Totally 22 episodes
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          href="/character/3"
+          title="Morty"
+        >
+          <div
+            class="css-ao3w3m"
+          >
+            <img
+              alt="Morty"
+              class="chakra-image__placeholder css-0"
+              src="/images/character-fallback.jpeg"
+            />
+            <div
+              class="css-n16x53"
+            >
+              <div
+                class="css-x1sij0"
+              >
+                <span
+                  class="chakra-badge css-637omx"
+                >
+                  Human
+                </span>
+              </div>
+              <h4
+                class="css-mvaft7"
+              >
+                <strong>
+                  Morty 
+                </strong>
+              </h4>
+              <p
+                class="css-0"
+              >
+                <strong>
+                  Last location - 
+                </strong>
+                 Earth Dimension 1
+              </p>
+              <div
+                class="css-15yujhg"
+              >
+                <span
+                  class="css-bgvdb6"
+                >
+                  Totally 10 episodes
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div
+        class="paginationContainer"
+      >
+        <div
+          class="paginationButtonContainer"
+        >
+          <div
+            class="pagination_button highlight "
+          >
+            1
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

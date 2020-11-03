@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, IconButton } from "@chakra-ui/core";
-import { ColorModeSwitcher } from "./ColorModeSwitcher";
+import { ColorModeSwitcher } from "../ColorModeSwitcher/ColorModeSwitcher";
 import { FaHome } from "react-icons/fa";
 import { Link } from "react-router-dom";
 export const Header: React.FC = () => {

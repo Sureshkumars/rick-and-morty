@@ -7,7 +7,7 @@ interface IProps {
 }
 export const SearchBox: React.FC<IProps> = (props: IProps) => {
   return (
-    <InputGroup maxWidth="80%">
+    <InputGroup maxWidth="80%" aria-label="search-input-container">
       <InputLeftElement
         pointerEvents="none"
         padding="0"
@@ -18,6 +18,7 @@ export const SearchBox: React.FC<IProps> = (props: IProps) => {
         value={props.value}
         placeholder="Enter the character name..."
         onChange={(e) => props.onChange(e.target.value)}
+        aria-label="search-input"
       />
     </InputGroup>
   );
