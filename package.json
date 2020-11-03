@@ -1,7 +1,7 @@
 {
-  "name": "Rick-and-Morty",
-  "version": "1.0.0-rc.7",
-  "private": true,
+  "name": "rick-and-morty",
+  "version": "1.0.0",
+  "private": false,
   "dependencies": {
     "@chakra-ui/core": "^1.0.0-rc.8",
     "@chakra-ui/icons": "^1.0.0-next.3",
